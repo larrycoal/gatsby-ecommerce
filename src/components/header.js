@@ -14,7 +14,7 @@ const Header = ({ siteTitle }) => {
       <div className="--subtitle">
         <Link to="/">About</Link>
         <Link to="/">Contact</Link>
-        <Link to="/cart" className="cart">
+        <Link to="/" className="cart">
           <span>Cart</span>
           <span>
             <small>{cartItems?.length}</small>
