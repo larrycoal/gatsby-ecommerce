@@ -1,0 +1,214 @@
+.main_header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: white;
+  padding: 1rem 3rem;
+  h1 {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .--subtitle {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    .cart {
+      border: 1px solid white;
+      padding: 2px 25px;
+      &:hover{
+          background-color: #d2eb67;
+          color: black;
+          border: 1px solid black;
+      }
+      small{
+          margin: 0px 3px;
+          vertical-align: text-bottom;
+      }
+    }
+  }
+}
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  .left,
+  .right {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+
+    transition: all linear 0.5s;
+  }
+  .left {
+    flex-direction: column;
+    justify-content: space-between;
+    .bottom {
+      display: flex;
+      gap: 15px;
+      color: #d2eb67;
+      i {
+        margin: 0px 10px;
+        color: white;
+      }
+    }
+  }
+  .right img:hover {
+    transition: all linear 0.4s;
+    border-bottom: 20px solid #d2eb67;
+    border-right: 20px solid #d2eb67;
+  }
+}
+.product_header {
+  position: relative;
+  padding: 10px 3rem;
+  margin: 0rem 3rem;
+  border-top: 2px solid rgb(94, 93, 93);
+  border-bottom: 2px solid rgb(94, 93, 93);
+  .filter {
+    .active {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      cursor: pointer;
+      i {
+        font-size: 25px;
+      }
+    }
+    .product_list {
+      position: absolute;
+      left: 25px;
+      top: 3rem;
+      list-style: none;
+      border: 1px solid #d2eb67;
+      width: 12rem;
+      border-radius: 5px;
+      li {
+        padding: 5px 10px;
+        border-top: 2px solid rgb(94, 93, 93);
+        border-bottom: 2px solid rgb(94, 93, 93);
+        cursor: pointer;
+        &:hover {
+          background-color: #d2eb67;
+          color: black;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+.footer_wrapper {
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  .right {
+      width: 400px;
+      p{
+          margin: 10px auto;
+          text-align: center;
+          font-size: 1.2rem;
+      }
+      ul{
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      
+      }
+  }
+}
+
+.product_body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem;
+  gap: 2rem;
+  .product_card {
+    width: calc(100vw / 4);
+    background: #5c5c5b;
+    padding: 1rem;
+    border-radius: 5px;
+    .top {
+      img {
+        margin: 0px;
+      }
+    }
+    .bottom {
+      h1,
+      p {
+        margin: 0px;
+      }
+      .potency {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+      h1 {
+        font-size: 1.4rem;
+        margin: 5px 0px;
+        letter-spacing: 2.5px;
+      }
+      .desc {
+        font-size: 0.8rem;
+        letter-spacing: 1.3px;
+      }
+      button{
+          font-size: 14px;
+          margin: 1rem 0;
+          background-color: #d2eb67;
+          border: none;
+          cursor: pointer;
+      }
+    }
+  }
+}
+.cart_wrapper{
+    padding: 3rem;
+    .container{
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .total{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    p{
+        font-size: 22px;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+   .bottom{
+     height: 80vh;
+     overflow: scroll;
+     border: 1px solid white;
+     display: flex;
+     flex-direction: column;
+     .item_wrapper{
+         display: flex;
+         gap: 10px;
+         padding: 1rem;
+         .image{
+             width: 350px;
+             display: flex;
+             align-items: center;
+         }
+         .desc p{
+             font-size: 14px;
+             letter-spacing: 1px;
+             margin: 0;
+         }
+     }
+    
+   }
+}

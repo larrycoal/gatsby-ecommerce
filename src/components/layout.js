@@ -7,10 +7,15 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import "./main.scss"
+import Footer from "./footer"
+import { CartContextProvider } from "../context/cartContext"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,25 +30,22 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+      </Helmet>
+      <CartContextProvider>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <div>
+          <main>{children}</main>
+        </div>
+        <Footer />
+      </CartContextProvider>
     </>
   )
 }

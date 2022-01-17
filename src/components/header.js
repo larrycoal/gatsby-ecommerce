@@ -1,35 +1,29 @@
-import * as React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { CartContext } from "../context/cartContext"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+const Header = ({ siteTitle }) => {
+
+  const {cartItems}=useContext(CartContext)
+  return (
+    <header className="main_header">
+      <h1 className="--title">
+        <Link to="/">{siteTitle}</Link>
       </h1>
-    </div>
-  </header>
-)
+      <div className="--subtitle">
+        <Link to="/">About</Link>
+        <Link to="/">Contact</Link>
+        <Link to="/cart" className="cart">
+          <span>Cart</span>
+          <span>
+            <small>{cartItems?.length}</small>
+          </span>
+        </Link>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

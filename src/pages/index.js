@@ -1,31 +1,48 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import  React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Product from '../components/product'
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
+const HomePage = () => {
+
+  return(
+    <Layout>
+    <div className="main-wrapper">
+      <div className="left">
+        <div className="top">
+          <h1>LOREM IPSUM DOLORET</h1>
+          <p>
+            Sunt nostrud amet aliqua eiusmod mollit. Eu Lorem voluptate laboris
+            aliqua adipisicing ea dolore tempor proident enim excepteur dolor.
+            Quis reprehenderit mollit nostrud
+          </p>
+        </div>
+        <div className="bottom">
+          <span>
+            <i class="fab fa-instagram" aria-hidden="true"></i>Instagram
+          </span>
+          <span>
+            <i class="fab fa-twitter" aria-hidden="true"></i>Twitter
+          </span>
+          <span>
+            <i class="fab fa-facebook" aria-hidden="true"></i>Facebook
+          </span>
+        </div>
+      </div>
+      <div className="right">
+        <StaticImage
+          src="../images/shelby-ireland-l0SMAXO6wV0-unsplash.jpg"
+          alt="Cannbis image"
+        />
+      </div>
+    </div>
+    <div className="product-wrapper">
+      <Product/>
+    </div>
   </Layout>
-)
+  )
+  
+}
 
-export default IndexPage
+export default HomePage
