@@ -1,3 +1,12 @@
+.layout_wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .content {
+    flex-grow: 1;
+  }
+}
+
 .main_header {
   display: flex;
   align-items: baseline;
@@ -18,14 +27,14 @@
     .cart {
       border: 1px solid white;
       padding: 2px 25px;
-      &:hover{
-          background-color: #d2eb67;
-          color: black;
-          border: 1px solid black;
+      &:hover {
+        background-color: #d2eb67;
+        color: black;
+        border: 1px solid black;
       }
-      small{
-          margin: 0px 3px;
-          vertical-align: text-bottom;
+      small {
+        margin: 0px 3px;
+        vertical-align: text-bottom;
       }
     }
   }
@@ -61,6 +70,7 @@
     border-right: 20px solid #d2eb67;
   }
 }
+
 .product_header {
   position: relative;
   padding: 10px 3rem;
@@ -109,19 +119,18 @@
   justify-content: space-around;
   padding: 2rem;
   .right {
-      width: 400px;
-      p{
-          margin: 10px auto;
-          text-align: center;
-          font-size: 1.2rem;
-      }
-      ul{
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-      
-      }
+    width: 400px;
+    p {
+      margin: 10px auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    ul {
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -160,55 +169,108 @@
         font-size: 0.8rem;
         letter-spacing: 1.3px;
       }
-      button{
-          font-size: 14px;
-          margin: 1rem 0;
-          background-color: #d2eb67;
-          border: none;
-          cursor: pointer;
+      button {
+        font-size: 14px;
+        margin: 1rem 0;
+        background-color: #d2eb67;
+        border: none;
+        cursor: pointer;
       }
     }
   }
 }
-.cart_wrapper{
-    padding: 3rem;
-    .container{
-        width: 50vw;
+.cart_wrapper {
+  padding: 3rem;
+  .container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .total {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  p {
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  .bottom {
+    height: 80vh;
+    overflow: scroll;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    .item_wrapper {
+      display: flex;
+      gap: 10px;
+      padding: 1rem;
+      .image {
+        width: 350px;
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        .total{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
+        align-items: center;
+      }
+      .desc p {
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin: 0;
+      }
     }
-    p{
-        font-size: 22px;
-        letter-spacing: 2px;
-        font-weight: bold;
-    }
-   .bottom{
-     height: 80vh;
-     overflow: scroll;
-     border: 1px solid white;
-     display: flex;
-     flex-direction: column;
-     .item_wrapper{
-         display: flex;
-         gap: 10px;
-         padding: 1rem;
-         .image{
-             width: 350px;
-             display: flex;
-             align-items: center;
-         }
-         .desc p{
-             font-size: 14px;
-             letter-spacing: 1px;
-             margin: 0;
-         }
-     }
-    
-   }
+  }
 }
+.about_wrapper {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    width: 40vw;
+  }
+  .about {
+    :nth-child(1) {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    letter-spacing: 2px;
+    line-height: 35px;
+  }
+  .image img {
+    height: 500px;
+    width: 500px;
+    border-radius: 100%;
+  }
+}
+@media (min-width: 300px) and(max-width:650px) {
+    .main-wrapper {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      .left,
+      .right {
+        width: 100%;
+      }
+    }
+    .main_header {
+      .--title {
+        font-size: 20px;
+      }
+      .--subtitle{
+          font-size: 14px;
+      }
+    }
+    .product_body .product_card{
+        width: 80vw;
+    }
+    .about_wrapper{
+        flex-direction: column;
+        div{
+            width: 100%;
+        }
+        .image img {
+            height: 300px;
+            width: 300px;
+            margin: 0;
+          }
+    }
+  }

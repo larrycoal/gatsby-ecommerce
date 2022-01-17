@@ -40,11 +40,13 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <CartContextProvider>
+        <div className="layout_wrapper">
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <div>
+        <div className="content">
           <main>{children}</main>
         </div>
         <Footer />
+        </div>
       </CartContextProvider>
     </>
   )
